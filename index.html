@@ -87,8 +87,73 @@ h2{font:400 24px/1.08 "IM Fell English SC",Georgia,serif;margin:3px 0 2px}
 .prow+.prow{margin-top:7px}
 .mth{font:600 13.5px/1.15 "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
 .mth span{color:var(--ink);letter-spacing:.06em}
-.abroad{display:flex;align-items:center;gap:10px;margin-top:9px;padding-top:8px;border-top:1px dashed rgba(46,38,31,.3);font-size:14px;color:var(--ink2)}
-.abroad b{font:600 12.5px "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border:1px dashed var(--ink2);border-radius:999px;padding:3px 9px;margin-left:auto;white-space:nowrap}
+.abroad{margin-top:9px;padding-top:8px;border-top:1px dashed rgba(46,38,31,.3);font-size:14px;color:var(--ink2)}
+.abroad summary{display:flex;align-items:center;gap:8px;min-height:30px;cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
+.abroad summary::-webkit-details-marker{display:none}
+.abroad summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.globe{width:17px;height:17px;flex:none;color:var(--green)}
+.abroad summary b i{display:inline-block;width:7px;height:7px;margin-left:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .25s}
+.abroad[open] summary b i{transform:translateY(1px) rotate(-135deg)}
+.abroad summary b{color:var(--green);border-color:var(--green)}
+.abody{display:grid;gap:6px;margin-top:8px}
+.anote{margin:0;font-size:13.5px;line-height:1.35;color:var(--ink2)}.anote strong{color:var(--ink)}.anote.sm{font-size:12.5px}
+.arow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:6px 7px 6px 11px;border-radius:9px;background:rgba(255,255,255,.45);border:1px solid rgba(46,38,31,.16)}
+.aval{font:700 15.5px/1.25 "Alegreya Sans",sans-serif;color:var(--ink);overflow-wrap:anywhere}
+.aval.mono{font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.copy.mini{min-height:34px;min-width:76px;padding:0 10px;font-size:14px;gap:6px}.copy.mini svg{width:15px;height:15px}
+.abroad summary b{font:600 12.5px "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border:1px dashed var(--ink2);border-radius:999px;padding:3px 9px;margin-left:auto;white-space:nowrap}
+/* donation tabs: abroad first, Pakistan second */
+.ptabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:3px;margin:9px 0 9px;border-radius:999px;background:rgba(46,38,31,.07);border:1px solid rgba(46,38,31,.2)}
+.ptabs button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 8px;border:0;border-radius:999px;background:transparent;font:600 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);cursor:pointer;transition:background .2s,color .2s}
+.ptabs button svg{width:16px;height:16px;flex:none}
+.ptabs button[aria-selected="true"]{background:linear-gradient(180deg,#2B6A48,#1A4A31);color:#FBF1DC;box-shadow:0 4px 10px -4px rgba(15,50,30,.8),inset 0 1px 0 rgba(255,255,255,.2)}
+.ptabs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ppanel[hidden]{display:none}
+.ppanel{animation:pfade .25s ease-out}
+@keyframes pfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.ppanel .prow+.prow{margin-top:7px}
+.iban{font:400 18px/1.2 "Alfa Slab One",Georgia,serif;letter-spacing:.01em;margin-top:3px;font-variant-numeric:tabular-nums}.iban span{white-space:nowrap}
+.chip{font:600 12.5px/1 "Barlow Condensed",sans-serif;letter-spacing:.1em;color:var(--green);background:rgba(255,255,255,.6);border:1px solid rgba(31,81,54,.55);border-radius:999px;padding:3px 9px;margin-left:3px;cursor:pointer;vertical-align:1px}
+.chip.done{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.sendvia{display:flex;flex-wrap:wrap;align-items:center;gap:7px 8px;margin-top:9px;font-size:14px;color:var(--ink2)}
+.sendbtn{display:inline-flex;align-items:center;gap:4px;min-height:36px;padding:0 13px 0 15px;border-radius:999px;border:1.5px solid var(--ink);background:rgba(255,255,255,.55);color:var(--ink);font:700 15px "Alegreya Sans",sans-serif;text-decoration:none;transition:transform .15s,background .15s}
+.sendbtn svg{width:15px;height:15px}
+.sendbtn:hover{background:#fff;transform:translateY(-1px)}.sendbtn:active{transform:scale(.97)}
+.give{display:flex;width:100%;background:linear-gradient(180deg,#2B6A48,#1A4A31);color:#FBF1DC;box-shadow:0 8px 18px -6px rgba(15,50,30,.85),inset 0 1px 0 rgba(255,255,255,.22);font-size:17px}
+.give svg:last-child{width:16px;height:16px;opacity:.85}
+.paycap{margin:5px 0 9px;text-align:center;font-size:13px;color:var(--ink2)}
+.wiselink{display:inline-flex;align-items:center;gap:2px;color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:2px}.wiselink svg{width:13px;height:13px}
+.qr{margin:0;display:grid;justify-items:center;gap:4px}
+.qrbox{width:88px;height:88px;padding:6px;background:#fff;border-radius:9px;border:1.5px solid rgba(217,162,58,.9);box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+.qrsvg{display:block;width:100%;height:100%}
+.qr figcaption{font:600 11.5px/1 "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+/* Remitly popup with the QR code */
+.pm{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px}
+.pm[hidden]{display:none}
+.pmback{position:absolute;inset:0;background:rgba(12,9,7,.72);opacity:0;transition:opacity .28s ease}
+.pmcard{position:relative;width:min(380px,100%);max-height:calc(100svh - 32px);overflow:auto;border-radius:16px;padding:20px 20px 16px;text-align:center;
+  background:linear-gradient(180deg,#FFF8E6 0%,#F3E3BA 100%);border:1px solid rgba(122,84,20,.6);
+  box-shadow:inset 0 0 0 3px rgba(255,248,230,.95),inset 0 0 0 4.5px rgba(217,162,58,.95),0 0 40px -8px rgba(217,162,58,.55),0 30px 60px -20px rgba(0,0,0,.95);
+  opacity:0;transform:translateY(18px) scale(.94);transition:opacity .3s ease,transform .42s cubic-bezier(.2,.9,.3,1.15)}
+.pm.open .pmback{opacity:1}
+.pm.open .pmcard{opacity:1;transform:none}
+.pmcard .dkick{justify-content:center}
+.pmcard h2{margin:4px 0 12px}
+.pmx{position:absolute;top:10px;right:10px;width:40px;height:40px;display:grid;place-items:center;border:0;border-radius:50%;background:rgba(46,38,31,.08);color:var(--ink);cursor:pointer}
+.pmx svg{width:18px;height:18px}.pmx:hover{background:rgba(46,38,31,.16)}
+.pmx:focus-visible,.pmlink:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.pmqr{width:min(232px,64vw);aspect-ratio:1;margin:0 auto;padding:12px;background:#fff;border-radius:14px;border:2px solid var(--gold);
+  box-shadow:0 8px 22px -8px rgba(0,0,0,.45);animation:qrglow 2.6s ease-in-out infinite}
+.pmqrin{width:100%;height:100%;opacity:0;transform:scale(.9);transition:opacity .45s ease .12s,transform .5s cubic-bezier(.2,.9,.3,1.2) .12s}
+.pm.open .pmqrin{opacity:1;transform:none}
+.qrsvg{display:block;width:100%;height:100%}
+@keyframes qrglow{0%,100%{box-shadow:0 8px 22px -8px rgba(0,0,0,.45),0 0 0 0 rgba(217,162,58,.0)}50%{box-shadow:0 8px 22px -8px rgba(0,0,0,.45),0 0 0 7px rgba(217,162,58,.28)}}
+.pmhint{margin:12px 0 4px;font-size:14px;color:var(--ink2)}
+.pmlink{display:inline-block;font:700 17px/1.3 "Alegreya Sans",sans-serif;color:var(--green);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;padding:2px 4px}
+.pmbtns{display:grid;grid-template-columns:1.25fr 1fr;gap:9px;margin-top:12px}
+.pmbtns .btn,.pmbtns .copy{min-width:0;width:100%}
+.pmnote{margin:11px 0 0;font-size:13px;color:var(--ink2);line-height:1.35}
+html.pmopen{overflow:hidden}
 /* year box over the map */
 .yearbox{position:absolute;right:4vw;bottom:6vh;z-index:2;transform:rotate(-2deg);filter:drop-shadow(0 10px 18px rgba(0,0,0,.6));pointer-events:none}
 .yearbox .strip{background:#F1E4C8;padding:12px 22px 12px 18px;clip-path:polygon(0 4%,6% 0,22% 3%,41% 0,63% 4%,82% 1%,100% 3%,98% 50%,100% 97%,80% 100%,58% 96%,37% 100%,15% 97%,0 100%,2% 52%);display:grid;grid-template-columns:auto auto;align-items:end;gap:2px 10px}
@@ -143,8 +208,21 @@ footer a{color:#e9d9b6}
   .copy{min-width:92px;padding:0 13px}
   .prow{padding:8px 8px 8px 11px}
   .abroad{font-size:13px}
+  .iban{font-size:16.5px}
+
   .music{top:32px;padding:0 13px 0 11px}
   .series{grid-template-columns:minmax(0,1fr)}
+}
+/* short laptop screens (1366x768 and similar): tighter so both cards fit without scrolling */
+@media (min-width:761px) and (max-height:820px){
+  .stage{padding-top:18px;padding-bottom:18px}
+  .stack{gap:9px}
+  .bar{padding:12px 16px}
+  .brand{grid-template-columns:56px minmax(0,1fr);padding:9px 14px}.seal{width:56px;height:56px}
+  .sub{display:none}
+  #hire h2{margin-bottom:10px}
+  .mails{margin-top:7px}.mail{min-height:32px}
+  .ptabs{margin:8px 0 8px}
 }
 /* short phone screens (Instagram's in-app browser, small Androids): tighter still, so both cards fit with map above */
 @media (max-width:760px){
@@ -167,13 +245,14 @@ footer a{color:#e9d9b6}
   html.compact .prow{padding:6px 7px 6px 10px}html.compact .prow+.prow{margin-top:6px}
   html.compact .mth{font-size:12.5px}
   html.compact .copy{min-width:84px;padding:0 11px}
-  html.compact .abroad{margin-top:7px;padding-top:6px;font-size:12.5px}html.compact .abroad b{font-size:11.5px;padding:2px 8px}
+  html.compact .abroad{margin-top:7px;padding-top:6px;font-size:12.5px}html.compact .abroad summary{min-height:26px}html.compact .abroad summary b{font-size:11.5px;padding:2px 8px}html.compact .aval{font-size:14.5px}
   html.compact .yearbox .strip{padding:5px 11px 6px 10px;gap:0 8px}
   html.compact .yearbox b{font-size:22px}html.compact .yearbox .ad{font-size:11px;padding-bottom:3px}
   html.compact .yearbox .cap{font-size:10.5px;max-width:170px}
   html.compact .music{top:30px;min-height:38px;font-size:14px}
+  html.compact .ptabs{margin:7px 0 7px}html.compact .ptabs button{min-height:32px;font-size:12.5px}html.compact .iban{font-size:15.5px}html.compact .give{font-size:16px}html.compact .paycap{margin:4px 0 7px;font-size:12px}html.compact .chip{font-size:11.5px;padding:2px 8px}
 }
-@media (prefers-reduced-motion:reduce){.bar,.bar::after,.btn::before,.copy::before,.pulse,.music.hint,.eq i,.heart{animation:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.pmcard,.pmback,.pmqrin{transition:none!important}.pmqr{animation:none!important}.bar,.bar::after,.btn::before,.copy::before,.pulse,.music.hint,.eq i,.heart{animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -210,6 +289,19 @@ footer a{color:#e9d9b6}
 <div class="kick dkick" id="h-don"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.2 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.1-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg>Donate</div>
 <h2>Support my work</h2>
 <p class="sub dsub">Every donation, big or small, helps me make more history videos.</p>
+<div class="ptabs" role="tablist" aria-label="Where are you paying from?">
+<button type="button" role="tab" id="tabIntl" aria-controls="panIntl" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>From abroad</button>
+<button type="button" role="tab" id="tabPk" aria-controls="panPk" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>In Pakistan</button>
+</div>
+<div class="ppanel" id="panIntl" role="tabpanel" aria-labelledby="tabIntl">
+<a class="btn give" id="remitlyPay" href="https://remit.ly/pay/ranajawada4318" target="_blank" rel="noopener" aria-haspopup="dialog" aria-controls="payModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M17 17h4v4h-4"/></svg>Pay with Remitly<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<p class="paycap">Scan the code or tap the link · card or bank · arrives in my Meezan account</p>
+<div class="pay prow">
+<div><div class="mth">Or IBAN · <span id="ibWho"></span></div><div class="iban" id="abIban"></div><div class="via">Meezan · SWIFT <button class="chip" type="button" id="swCopy" aria-label="Copy SWIFT code"><span id="abSwift"></span></button> · <a class="wiselink" id="wiseLink" href="https://wise.com/gb/send-money/send-money-to-pakistan" target="_blank" rel="noopener">Wise<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div>
+<button class="copy" type="button" id="ibCopy" style="--g:.6s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span>Copy</span></button>
+</div>
+</div>
+<div class="ppanel" id="panPk" role="tabpanel" aria-labelledby="tabPk" hidden>
 <div class="pay prow">
 <div><div class="mth">JazzCash</div><div class="num" id="jcNum"></div><div class="via"><span class="vl">Also works from Easypaisa, NayaPay or any bank app</span><span class="vs">Easypaisa, NayaPay &amp; banks too</span></div></div>
 <button class="copy" type="button" id="jcCopy" style="--g:.6s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span>Copy</span></button>
@@ -218,10 +310,26 @@ footer a{color:#e9d9b6}
 <div><div class="mth">Meezan Bank · <span id="mzWho"></span></div><div class="num" id="mzNum"></div></div>
 <button class="copy" type="button" id="mzCopy" style="--g:1.8s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span>Copy</span></button>
 </div>
-<div class="abroad"><span>From abroad: Patreon and card donations</span><b>Opening soon</b></div>
+</div>
 </section>
 </div>
 </main>
+<div class="pm" id="payModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" hidden>
+<div class="pmback" data-close></div>
+<div class="pmcard" role="document">
+<button class="pmx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<div class="kick dkick"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.2 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.1-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg>Donate from abroad</div>
+<h2 id="pmTitle">Scan to send with Remitly</h2>
+<div class="pmqr"><div class="pmqrin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" class="qrsvg" shape-rendering="crispEdges" role="img" aria-label="QR code for my Remitly pay link"><path class="qrline" stroke="#2e261f" d="M0 0.5h7m2 0h3m2 0h1m6 0h2m1 0h1m1 0h7m-33 1h1m5 0h1m1 0h4m1 0h2m1 0h2m2 0h2m2 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h1m1 0h6m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m9 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m3 0h2m2 0h1m1 0h3m1 0h3m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m1 0h3m5 0h1m4 0h2m-25 1h1m5 0h1m1 0h4m1 0h3m1 0h1m4 0h1m2 0h2m2 0h3m-31 1h4m3 0h3m3 0h2m2 0h3m1 0h2m4 0h4m-32 1h2m3 0h3m1 0h2m4 0h2m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m-28 1h1m3 0h1m2 0h1m3 0h3m5 0h1m1 0h2m1 0h6m-29 1h3m3 0h2m1 0h6m1 0h1m1 0h1m3 0h2m3 0h2m-33 1h1m4 0h1m3 0h1m1 0h2m1 0h1m1 0h1m3 0h4m1 0h1m1 0h1m2 0h3m-32 1h1m1 0h4m7 0h1m3 0h2m1 0h2m2 0h3m1 0h3m-32 1h1m1 0h4m4 0h1m2 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m-32 1h1m4 0h2m4 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h2m1 0h3m2 0h1m-31 1h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h10m1 0h2m2 0h4m-32 1h3m1 0h3m1 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h1m3 0h1m1 0h4m-32 1h5m6 0h1m4 0h2m3 0h1m2 0h2m1 0h3m-31 1h1m1 0h1m1 0h4m1 0h1m1 0h6m5 0h2m1 0h1m2 0h2m1 0h1m-32 1h2m2 0h1m3 0h2m2 0h1m3 0h3m1 0h2m1 0h1m1 0h1m1 0h2m-29 1h1m2 0h1m1 0h2m2 0h3m2 0h4m3 0h1m8 0h2m-32 1h1m1 0h2m4 0h2m1 0h1m2 0h1m3 0h1m3 0h2m2 0h2m2 0h2m-32 1h2m1 0h4m2 0h2m2 0h1m1 0h2m2 0h2m1 0h1m1 0h5m2 0h2m-25 1h1m1 0h2m1 0h1m1 0h2m1 0h3m3 0h1m3 0h1m1 0h3m-33 1h7m2 0h1m2 0h2m1 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h1m-31 1h1m5 0h1m5 0h5m3 0h1m2 0h2m3 0h5m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h1m4 0h1m3 0h1m1 0h6m-30 1h1m1 0h3m1 0h1m3 0h2m1 0h2m1 0h1m4 0h5m1 0h3m1 0h2m-33 1h1m1 0h3m1 0h1m7 0h1m1 0h5m3 0h2m1 0h2m2 0h2m-33 1h1m5 0h1m8 0h2m2 0h1m2 0h1m4 0h4m-31 1h7m1 0h1m2 0h1m1 0h2m2 0h1m2 0h1m1 0h6m1 0h1m1 0h1"/></svg></div></div>
+<p class="pmhint">Point your phone camera at the code, or use the link:</p>
+<a class="pmlink" id="pmLink" href="https://remit.ly/pay/ranajawada4318" target="_blank" rel="noopener">remit.ly/pay/ranajawada4318</a>
+<div class="pmbtns">
+<a class="btn give" id="pmOpen" href="https://remit.ly/pay/ranajawada4318" target="_blank" rel="noopener">Open Remitly<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button class="copy" type="button" id="pmCopy" data-copy="https://remit.ly/pay/ranajawada4318"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span>Copy link</span></button>
+</div>
+<p class="pmnote">Pay by card or bank transfer. It arrives straight in my Meezan account (Rana Jawad Arif). Thank you!</p>
+</div>
+</div>
 
 <section class="more" aria-labelledby="h-series">
 <div class="series">
@@ -230,7 +338,7 @@ footer a{color:#e9d9b6}
 </div>
 <footer>
 <p>Jawad's Atlas · <span id="footMail"></span></p>
-<p>Music: "Blind Faith" and "Orchestral Background" from the Empires of Islam series; "Constance" by Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Shaded relief: Natural Earth.</p>
+<p>Music: "Blind Faith", from the Empires of Islam series. Shaded relief: Natural Earth.</p>
 </footer>
 </section>
 
@@ -243,7 +351,7 @@ window.__ATLAS={"map":{"land":[[-620,7290,2,10,23,35,19,5,-9,7,-4,10,3,11,11,13,
 const D = {
   emails: ["jawadrana6100@gmail.com", "ranajawad961@gmail.com"],
   jazzcash: "03000460795",
-  bank: {name: "Meezan Bank", title: "Rana Jawad Arif", account: "02150113204806"}
+  bank: {name: "Meezan Bank", title: "Rana Jawad Arif", account: "02150113204806", iban: "PK96MEZN0002150113204806", swift: "MEZNPKKA"}
 };
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 document.getElementById("jcNum").textContent = D.jazzcash.replace(/^(\d{4})(\d+)$/, "$1 $2");
@@ -254,11 +362,28 @@ document.getElementById("mails").innerHTML = D.emails.map(e => `<button class="m
 document.getElementById("footMail").textContent = D.emails.join(" · ");
 document.getElementById("jcCopy").dataset.copy = D.jazzcash;
 document.getElementById("mzCopy").dataset.copy = D.bank.account;
+document.getElementById("ibWho").textContent = D.bank.title;
+{ const g = D.bank.iban.match(/.{1,4}/g), el = document.getElementById("abIban"), h = Math.ceil(g.length / 2);
+  for (const part of [g.slice(0, h).join(" "), g.slice(h).join(" ")]) { const s = document.createElement("span"); s.textContent = part; el.append(s, " "); } }
+document.getElementById("abSwift").textContent = D.bank.swift;
+document.getElementById("ibCopy").dataset.copy = D.bank.iban;
+document.getElementById("swCopy").dataset.copy = D.bank.swift;
+/* Wise's send-to-Pakistan page needs a country in its address: use the visitor's, where Wise has one */
+{ const WISE = ["us", "gb", "ca", "au", "ae", "de", "fr", "nl", "it", "es", "ie", "nz", "sg", "my"];
+  const rg = ((navigator.language || "").split("-")[1] || "").toLowerCase();
+  document.getElementById("wiseLink").href = `https://wise.com/${WISE.includes(rg) ? rg : (rg === "uk" ? "gb" : "gb")}/send-money/send-money-to-pakistan`; }
+/* donation tabs */
+{ const tabs = [...document.querySelectorAll('.ptabs [role="tab"]')];
+  const pick = (t, focus) => { for (const x of tabs) { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute("aria-controls")).hidden = !on; } if (focus) t.focus(); };
+  for (const t of tabs) {
+    t.addEventListener("click", () => pick(t));
+    t.addEventListener("keydown", e => { const i = tabs.indexOf(t); if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); pick(tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length], true); } });
+  } }
 const P = window.__ATLAS;
 
 /* ---------- sound: music (crossfaded playlist) and quiet clicks ---------- */
-const TRACKS = ["atlas-music-1.mp3", "atlas-music-2.mp3", "atlas-music-3.mp3"];
-const VOL = .5, LEVEL = [.76, .82, 1]; /* evens out the three tracks (measured -17.0 / -17.7 / -19.4 LUFS) */
+const TRACKS = ["atlas-music-1.mp3"]; /* "Blind Faith": the steadiest of the three, it stays clear at a very low volume */
+const VOL = .16, LEVEL = [1]; /* very low background level */
 let AC = null, master = null, clickBuf = null, blipBuf = null, on = false, cur = 0, ti = 0, switching = false;
 const els = [], gains = [];
 const btn = document.getElementById("music"), lab = document.getElementById("musicLabel");
@@ -312,12 +437,42 @@ document.addEventListener("click", e => {
   if (!initAudio()) return;
   if (AC.state !== "running" && AC.resume) AC.resume();
   if (first) { first = false; if (!e.target.closest(".music")) musicOn(); }
-  if (e.target.closest(".btn, .copy, .mail, .music, a") && !e.target.closest("[data-copy]")) sfx(clickBuf, .16);
+  if (e.target.closest(".btn, .copy, .mail, .music, a, summary, [role=tab]") && !e.target.closest("[data-copy]")) sfx(clickBuf, .06);
 }, true);
 document.addEventListener("keydown", e => { if (first && (e.key === "Enter" || e.key === " ") && initAudio()) { first = false; AC.resume && AC.resume(); musicOn(); } });
 btn.addEventListener("click", () => { if (on) musicOff(); else musicOn(); });
 document.addEventListener("visibilitychange", () => { if (!AC) return; if (document.hidden) AC.suspend && AC.suspend(); else if (on) AC.resume && AC.resume(); });
 
+/* ---------- Remitly popup ---------- */
+{ const pm = document.getElementById("payModal"), card = pm.querySelector(".pmcard"), trig = document.getElementById("remitlyPay");
+  let last = null, closing = 0;
+  const focusables = () => [...card.querySelectorAll('a[href], button:not([disabled])')];
+  const open = () => {
+    clearTimeout(closing); last = document.activeElement;
+    pm.hidden = false; document.documentElement.classList.add("pmopen");
+    requestAnimationFrame(() => requestAnimationFrame(() => pm.classList.add("open")));
+    setTimeout(() => card.querySelector(".pmx").focus({preventScroll: true}), 60);
+    try { history.pushState({pm: 1}, ""); } catch (e) {}
+  };
+  const close = fromBack => {
+    if (pm.hidden) return;
+    pm.classList.remove("open"); document.documentElement.classList.remove("pmopen");
+    closing = setTimeout(() => { pm.hidden = true; }, 320);
+    if (last && last.focus) last.focus({preventScroll: true});
+    if (!fromBack && history.state && history.state.pm) { try { history.back(); } catch (e) {} }
+  };
+  trig.addEventListener("click", e => { e.preventDefault(); open(); });
+  pm.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });
+  document.addEventListener("keydown", e => {
+    if (pm.hidden) return;
+    if (e.key === "Escape") { e.preventDefault(); close(); }
+    else if (e.key === "Tab") { const f = focusables(), a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  });
+  /* the phone's back button closes the popup instead of leaving the page */
+  addEventListener("popstate", () => close(true));
+  window.__payModal = {open, close};
+}
 /* ---------- Email me: some in-app viewers can't open a mail app, so the address is copied too ---------- */
 document.getElementById("mailBtn").addEventListener("click", () => {
   const b = document.getElementById("mailBtn");
@@ -330,8 +485,8 @@ document.addEventListener("click", async e => {
   const b = e.target.closest("[data-copy]"); if (!b) return;
   const label = b.querySelector("span:not(.eq)") || b, lab2 = b.querySelector("i");
   try { await navigator.clipboard.writeText(b.dataset.copy); }
-  catch (err) { const r = document.createRange(); r.selectNodeContents((b.closest(".pay") || b.closest(".bar")).querySelector(".num") || b); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-  sfx(blipBuf, .2);
+  catch (err) { const r = document.createRange(); r.selectNodeContents(b.classList.contains("chip") ? b : ((b.closest(".pay") || b.closest(".bar")).querySelector(".iban, .num") || b)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  sfx(blipBuf, .08);
   b.classList.add("done");
   if (lab2) { const o = lab2.textContent; lab2.textContent = "Copied"; setTimeout(() => { lab2.textContent = o; b.classList.remove("done"); }, 1700); }
   else { const o = label.textContent; label.textContent = "Copied"; setTimeout(() => { label.textContent = o; b.classList.remove("done"); }, 1700); }
@@ -716,7 +871,7 @@ function placeVideo() {
 /* on phones the map shows in the gap between the header and the cards; measure it in page coordinates */
 function measureGap() {
   const b = document.querySelector(".brand"), y = document.getElementById("yb");
-  if (lockGap || !b || !y) return;
+  if (lockGap || !b || !y || document.querySelector("#abroad[open]")) return;
   const top = b.getBoundingClientRect().bottom + scrollY, bot = y.getBoundingClientRect().top + scrollY;
   if (bot - top > 40) { gapTop = top; gapBot = Math.min(bot, H); }
   placeVideo();
