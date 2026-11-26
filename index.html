@@ -432,34 +432,45 @@ function musicOff() {
   if (!AC) return; ramp(master, 0, .7); setTimeout(() => { if (!on) els.forEach(a => a.pause()); }, 800);
 }
 let first = true;
-/* "click" is the event phones count as a real tap (pointerdown is not), so sound starts here */
-document.addEventListener("click", e => {
+/* sound may only start from a real tap: "click" on most phones, the end of a touch on iPhones
+   (iPhone Safari sends no click for taps on plain areas such as the map) */
+function startFromGesture(target) {
   if (!initAudio()) return;
   if (AC.state !== "running" && AC.resume) AC.resume();
-  if (first) { first = false; if (!e.target.closest(".music")) musicOn(); }
+  if (first) { first = false; if (!(target && target.closest && target.closest(".music"))) musicOn(); }
+}
+document.addEventListener("click", e => {
+  startFromGesture(e.target);
   if (e.target.closest(".btn, .copy, .mail, .music, a, summary, [role=tab]") && !e.target.closest("[data-copy]")) sfx(clickBuf, .06);
 }, true);
+{ let moved = false;
+  document.addEventListener("touchstart", () => { moved = false; }, {passive: true, capture: true});
+  document.addEventListener("touchmove", () => { moved = true; }, {passive: true, capture: true});
+  document.addEventListener("touchend", e => { if (first && !moved) startFromGesture(e.target); }, {passive: true, capture: true});
+  for (const el of document.querySelectorAll(".stage, .more")) el.addEventListener("click", () => {}); }
 document.addEventListener("keydown", e => { if (first && (e.key === "Enter" || e.key === " ") && initAudio()) { first = false; AC.resume && AC.resume(); musicOn(); } });
 btn.addEventListener("click", () => { if (on) musicOff(); else musicOn(); });
 document.addEventListener("visibilitychange", () => { if (!AC) return; if (document.hidden) AC.suspend && AC.suspend(); else if (on) AC.resume && AC.resume(); });
 
 /* ---------- Remitly popup ---------- */
 { const pm = document.getElementById("payModal"), card = pm.querySelector(".pmcard"), trig = document.getElementById("remitlyPay");
-  let last = null, closing = 0;
+  let last = null, closing = 0, pushed = false, popPending = false, wantPush = false, pendTimer = 0;
+  const pushIfNeeded = () => { if (pushed) return; if (popPending) { wantPush = true; return; } try { history.pushState({pm: 1}, ""); pushed = true; } catch (e) {} };
   const focusables = () => [...card.querySelectorAll('a[href], button:not([disabled])')];
   const open = () => {
     clearTimeout(closing); last = document.activeElement;
     pm.hidden = false; document.documentElement.classList.add("pmopen");
-    requestAnimationFrame(() => requestAnimationFrame(() => pm.classList.add("open")));
+    void pm.offsetWidth; pm.classList.add("open");
     setTimeout(() => card.querySelector(".pmx").focus({preventScroll: true}), 60);
-    try { history.pushState({pm: 1}, ""); } catch (e) {}
+    pushIfNeeded();
   };
   const close = fromBack => {
     if (pm.hidden) return;
     pm.classList.remove("open"); document.documentElement.classList.remove("pmopen");
     closing = setTimeout(() => { pm.hidden = true; }, 320);
     if (last && last.focus) last.focus({preventScroll: true});
-    if (!fromBack && history.state && history.state.pm) { try { history.back(); } catch (e) {} }
+    if (!fromBack && pushed) { pushed = false; wantPush = false; popPending = true; clearTimeout(pendTimer); pendTimer = setTimeout(() => { popPending = false; }, 1500);
+      try { history.back(); } catch (e) { popPending = false; } }
   };
   trig.addEventListener("click", e => { e.preventDefault(); open(); });
   pm.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });
@@ -470,7 +481,10 @@ document.addEventListener("visibilitychange", () => { if (!AC) return; if (docum
       if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
   });
   /* the phone's back button closes the popup instead of leaving the page */
-  addEventListener("popstate", () => close(true));
+  addEventListener("popstate", () => {
+    if (popPending) { popPending = false; clearTimeout(pendTimer); if (wantPush && !pm.hidden) { wantPush = false; pushIfNeeded(); } return; }
+    pushed = false; close(true);
+  });
   window.__payModal = {open, close};
 }
 /* ---------- Email me: some in-app viewers can't open a mail app, so the address is copied too ---------- */
