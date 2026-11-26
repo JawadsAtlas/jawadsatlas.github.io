@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jawad's Atlas Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Amiri:wght@400;700&family=Alegreya+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday, warm; a page from an old Islamic atlas
+   IDEA al-Idrisi's round world map: south at the top, an encircling ocean, gold rings, Arabic in the border
+   PICTURE the round world disk with the early routes out of Mecca drawn in gold, slowly travelling
+   COLOUR Jawad's Atlas Paper: paper #F1E4C8, parchment #D8C59E, sea #42697A, ink #2E261F, gold #D9A23A, rubric red #9F2C35, green #1F5136
+   TYPE IM Fell English SC for titles, Amiri for Arabic, Alegreya Sans for text
+   LAYOUT star band; disk; name and links; hire card; series cartouche; three support cards; star band footer */
+:root{color-scheme:light;
+--paper:#F1E4C8;--card:#F7ECD3;--parch:#D8C59E;--shade:#BFA77E;--sea:#42697A;--glow:#5E8796;
+--ink:#2E261F;--ink2:#5a4b3c;--gold:#D9A23A;--red:#9F2C35;--green:#1F5136;--rule:rgba(46,38,31,.42)}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .18 0 0 0 0 .15 0 0 0 0 .12 0 0 0 .1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");color:var(--ink);font:17px/1.55 "Alegreya Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.stars{height:34px;border-block:2px solid var(--gold);box-shadow:0 1px 0 var(--ink),0 -1px 0 var(--ink);background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><rect width='30' height='30' fill='%2342697A'/><g fill='%23D9A23A' stroke='%232E261F' stroke-width='.9'><rect x='8.5' y='8.5' width='13' height='13'/><rect x='8.5' y='8.5' width='13' height='13' transform='rotate(45 15 15)'/></g><circle cx='15' cy='15' r='2.6' fill='%239F2C35'/><path d='M0 0h4L0 4zM30 0h-4l4 4zM0 30h4l-4-4zM30 30h-4l4-4z' fill='%23D9A23A'/></svg>") center/30px 30px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 max(16px,4vw) 44px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:clamp(18px,3vw,30px)}
+.disk{width:min(88vw,400px);aspect-ratio:1}
+.disk svg{width:100%;height:100%;display:block;overflow:visible}
+.route{stroke-dasharray:6 6;animation:sail 2.2s linear infinite}
+@keyframes sail{to{stroke-dashoffset:-24}}
+@media (prefers-reduced-motion:reduce){.route{animation:none}.eq i{animation:none}}
+h1{font:400 clamp(40px,7vw,56px)/1.02 "IM Fell English SC",Georgia,serif;margin:10px 0 0;letter-spacing:-.01em;text-wrap:balance}
+.ar{font:700 28px/1.5 Amiri,serif;color:var(--red);margin:0}
+.tag{font:italic 400 19px/1.45 "IM Fell English",Georgia,serif;max-width:30em;margin:6px auto 0;color:var(--ink2)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;background:var(--card)}
+.chip svg{width:18px;height:18px}
+section{margin-top:40px}
+h2{font:400 30px/1.1 "IM Fell English SC",Georgia,serif;margin:0 0 6px}
+.lede{color:var(--ink2);margin:0 0 18px;max-width:40em}
+.card{background:var(--card);border:1px solid var(--rule);box-shadow:inset 0 0 0 4px var(--card),inset 0 0 0 5px rgba(46,38,31,.22);border-radius:6px;padding:clamp(18px,3vw,28px)}
+.kick{font:400 17px/1.2 "IM Fell English SC",Georgia,serif;color:var(--red)}
+.hire{display:grid;gap:22px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:start}
+.hire ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.hire li{display:flex;gap:10px;align-items:baseline}
+.hire li::before{content:"";flex:none;width:10px;height:10px;background:var(--gold);border:1px solid var(--ink);transform:rotate(45deg) translateY(-1px)}
+.actions{display:grid;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 20px;border-radius:999px;font:700 16.5px/1 "Alegreya Sans",system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;width:100%;white-space:nowrap}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.red{background:var(--red);color:#F8EEDA}
+.btn.green{background:var(--green);color:#F8EEDA}
+.btn.line{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn:hover{filter:brightness(1.1)}
+.btn:focus-visible,.chip:focus-visible,.copy:focus-visible,.music:focus-visible{outline:3px solid var(--sea);outline-offset:3px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 14px;border:1px dashed var(--rule);border-radius:10px;font-size:16px}
+.row span{overflow-wrap:anywhere}
+.copy{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:700 14px "Alegreya Sans",system-ui,sans-serif;cursor:pointer}
+.series{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;color:var(--paper);border-radius:6px;padding:clamp(20px,3.4vw,32px);background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='18'><path d='M0 9q11-7 22 0t22 0' fill='none' stroke='%23F1E4C8' stroke-opacity='.16' stroke-width='1.5'/></svg>"),var(--sea);border:2px solid var(--gold);box-shadow:0 0 0 1px var(--ink)}
+.series h3{font:400 clamp(30px,5vw,40px)/1.05 "IM Fell English SC",Georgia,serif;margin:6px 0}
+.series p{margin:0;max-width:34em}
+.pill{display:inline-block;font-size:14px;font-weight:800;padding:3px 12px;border-radius:999px;background:var(--gold);color:var(--ink)}
+.series .btn{width:auto;background:var(--paper);color:var(--ink)}
+.support{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.support .card{display:flex;flex-direction:column;gap:10px}
+.support h3{font:400 24px/1.1 "IM Fell English SC",Georgia,serif;margin:0}
+.support p{margin:0;color:var(--ink2);flex:1}
+.num{font:800 24px/1.2 "Alegreya Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:.02em}
+.small{font-size:15px;color:var(--ink2)}
+.small b{color:var(--ink)}
+.soon{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;border:1.5px dashed var(--ink2);color:var(--ink2);font-weight:700}
+.music{position:fixed;top:44px;right:max(12px,env(safe-area-inset-right,0px));z-index:5;display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px 0 12px;border-radius:999px;border:2px solid var(--gold);background:var(--ink);color:var(--paper);font:700 15px "Alegreya Sans",system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 0 rgba(46,38,31,.35)}
+.music svg{width:18px;height:18px}
+.eq{display:none;align-items:flex-end;gap:2px;height:16px}
+.eq i{width:3px;background:var(--gold);animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}
+@keyframes eq{0%,100%{height:4px}50%{height:16px}}
+.music[aria-pressed=true] .eq{display:inline-flex}
+.music[aria-pressed=true] .note{display:none}
+footer{margin-top:44px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:16px max(16px,4vw) 22px;max-width:1040px;margin:0 auto;color:var(--ink2);font-size:15px}
+@media (max-width:880px){.support{grid-template-columns:minmax(0,1fr)}.hire{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.series{grid-template-columns:minmax(0,1fr)}.series .btn{width:100%}.music{top:42px;width:44px;padding:0;justify-content:center}.music #musicLabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<button class="music" id="music" type="button" aria-pressed="false">
+<svg class="note" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18.5a3 3 0 1 1-2-2.83V5l12-2v12.5a3 3 0 1 1-2-2.83V7.4L9 8.7z"/></svg>
+<span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+<span id="musicLabel">Play music</span>
+</button>
+
+<main class="wrap">
+<header class="hero">
+<div class="disk" role="img" aria-label="A round world map in the style of al-Idrisi, south at the top, with routes from Mecca to Cordoba and Lahore">
+<svg id="disk" viewBox="0 0 400 400"></svg>
+</div>
+<h1>Jawad's Atlas</h1>
+<p class="ar" lang="ar" dir="rtl">أطلس جواد</p>
+<p class="tag">Geopolitics, history and economics, told through animated maps. A new video every week.</p>
+<nav class="socials" id="socials" aria-label="Find Jawad's Atlas"></nav>
+</header>
+
+<section aria-labelledby="h-hire">
+<div class="card hire">
+<div>
+<span class="kick">Commissions open</span>
+<h2 id="h-hire">Hire me for map animations</h2>
+<p class="lede" style="margin:0">I'm Jawad. I animate maps and edit documentary-style videos for history, geopolitics and explainer channels.</p>
+<ul>
+<li>Animated maps in After Effects and GeoLayers</li>
+<li>Documentary and explainer edits, start to finish</li>
+<li>Motion graphics, banners and custom map icons</li>
+</ul>
+</div>
+<div class="actions" id="hireActions"></div>
+</div>
+</section>
+
+<section aria-labelledby="h-series">
+<div class="series">
+<div>
+<span class="pill">Weekly series</span>
+<h3 id="h-series">Empires of Islam</h3>
+<p>The great Muslim empires on the map, part by part, all the way to Muslims in America today.</p>
+</div>
+<a class="btn" id="seriesBtn" target="_blank" rel="noopener"></a>
+</div>
+</section>
+
+<section aria-labelledby="h-support">
+<h2 id="h-support">Support the Atlas</h2>
+<p class="lede">Every video takes days of research, scripting and animation. If you'd like to help me make more of them, here's how.</p>
+<div class="support" id="support"></div>
+</section>
+</main>
+
+<footer>
+<div class="stars" aria-hidden="true"></div>
+<div class="foot"><span>Jawad's Atlas · map videos on geopolitics, history and economics</span><span id="footMail"></span></div>
+</footer>
+
+<script>
+{
+/* Details shown on the page. Anything left empty shows a fallback. */
+const D = {
+  emails: ["jawadrana6100@gmail.com", "ranajawad961@gmail.com"],
+  instagram: "jawadsatlas",
+  youtube: "", x: "", seriesUrl: "",
+  jazzcash: "03000460795",
+  bank: {name: "Meezan Bank", title: "RANA JAWAD ARIF", account: "02150113204806"},
+  patreon: "", gumroad: ""
+};
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const IC = {
+  ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  yt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>',
+  x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>',
+  dm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg>',
+  play: '<svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>'
+};
+const igUrl = "https://www.instagram.com/" + D.instagram + "/";
+const dmUrl = "https://ig.me/m/" + D.instagram;
+const copyBtn = (v, label) => `<button class="copy" type="button" data-copy="${esc(v)}">${esc(label || "Copy")}</button>`;
+
+document.getElementById("socials").innerHTML = [
+  [igUrl, IC.ig, "@" + D.instagram], [D.youtube, IC.yt, "YouTube"], [D.x, IC.x, "X"]
+].filter(s => s[0]).map(([u, i, t]) => `<a class="chip" href="${esc(u)}" target="_blank" rel="noopener">${i}<span>${esc(t)}</span></a>`).join("");
+
+document.getElementById("hireActions").innerHTML =
+  `<a class="btn red" href="mailto:${D.emails.map(esc).join(",")}?subject=${encodeURIComponent("Map animation commission")}">${IC.mail}Email me about a project</a>` +
+  D.emails.map(e => `<div class="row"><span>${esc(e)}</span>${copyBtn(e)}</div>`).join("") +
+  `<a class="btn line" href="${esc(dmUrl)}" target="_blank" rel="noopener">${IC.dm}Message on Instagram</a>`;
+document.getElementById("footMail").textContent = D.emails.join(" · ");
+
+const sb = document.getElementById("seriesBtn");
+sb.href = D.seriesUrl || D.youtube || igUrl;
+sb.innerHTML = IC.play + (D.seriesUrl || D.youtube ? "Watch the series" : "Watch on Instagram");
+
+const jc = D.jazzcash.replace(/^(\d{4})(\d+)$/, "$1 $2");
+const abroad = (D.patreon || D.gumroad)
+  ? [D.patreon && `<a class="btn green" href="${esc(D.patreon)}" target="_blank" rel="noopener">Join on Patreon</a>`, D.gumroad && `<a class="btn line" href="${esc(D.gumroad)}" target="_blank" rel="noopener">Send a tip by card</a>`].filter(Boolean).join("")
+  : `<div class="soon">Opening soon</div>`;
+document.getElementById("support").innerHTML = [
+  `<div class="card"><span class="kick">In Pakistan</span><h3>JazzCash</h3>
+   <div class="num">${esc(jc)}</div>
+   <p>Send any amount to this JazzCash number from JazzCash, Easypaisa or your bank app.</p>
+   <button class="btn green" type="button" data-copy="${esc(D.jazzcash)}">Copy number</button></div>`,
+  `<div class="card"><span class="kick">In Pakistan</span><h3>${esc(D.bank.name)}</h3>
+   <div class="num">${esc(D.bank.account)}</div>
+   <div class="small">Account title <b>${esc(D.bank.title)}</b></div>
+   <p>Send by bank transfer from any Pakistani bank app.</p>
+   <button class="btn green" type="button" data-copy="${esc(D.bank.account)}">Copy account number</button></div>`,
+  `<div class="card"><span class="kick">From anywhere</span><h3>Patreon and card tips</h3>
+   <p>Monthly memberships with early access and 4K map stills, plus one-time tips by card from any country.</p>${abroad}</div>`
+].join("");
+
+document.addEventListener("click", async e => {
+  const b = e.target.closest("[data-copy]");
+  if (!b) return;
+  const old = b.textContent;
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; }
+  catch (err) {
+    const t = b.parentElement.querySelector(".row span, .num");
+    if (t) { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    b.textContent = "Selected, now copy";
+  }
+  setTimeout(() => { b.textContent = old; }, 1800);
+});
+
+/* ---------- the round world map, al-Idrisi style (south at the top) ---------- */
+const ridge = (x, y, n, c) => { let d = `M${x} ${y}`; for (let i = 0; i < n; i++) d += "q5 -11 10 0"; return `<path d="${d}z" fill="${c}" stroke="#2E261F" stroke-width="1" stroke-linejoin="round"/>`; };
+const seas = [
+  "M110 40L300 40L292 78C285 100 270 112 250 118C238 122 232 130 224 136C214 144 204 142 196 136C184 128 172 124 158 122C140 120 126 106 118 90Z",
+  "M246 116C254 140 262 170 270 204C273 211 279 208 277 200C271 168 263 138 257 114Z",
+  "M182 126C176 145 166 160 160 176C158 183 165 185 169 178C177 162 187 146 193 130Z",
+  "M362 222C330 226 300 220 272 228C250 234 232 228 214 236C205 241 210 251 220 248C240 246 258 252 282 248C310 244 334 250 362 254Z",
+  "M212 276C222 266 242 266 254 274C259 282 244 290 230 288C218 287 209 283 212 276Z",
+  "M150 242C162 242 166 256 164 268C162 282 150 286 142 278C134 268 138 244 150 242Z"
+];
+const cities = [
+  {x: 245, y: 168, n: "مكة", dx: 0, dy: -9},
+  {x: 205, y: 226, n: "دمشق", dx: -4, dy: -8},
+  {x: 177, y: 196, n: "بغداد", dx: -2, dy: 16},
+  {x: 290, y: 214, n: "القاهرة", dx: -6, dy: -9},
+  {x: 326, y: 268, n: "قرطبة", dx: 0, dy: 17},
+  {x: 98, y: 186, n: "لاهور", dx: 0, dy: -9}
+];
+const ring = "أطلس جواد ۞ الجغرافيا ۞ التاريخ ۞ الاقتصاد ۞ ";
+document.getElementById("disk").innerHTML = `
+<defs>
+<pattern id="wv" width="20" height="9" patternUnits="userSpaceOnUse"><path d="M0 4.5q5-4 10 0t10 0" fill="none" stroke="#F1E4C8" stroke-opacity=".5" stroke-width="1"/></pattern>
+<mask id="land"><circle cx="200" cy="200" r="152" fill="#fff"/>${seas.map(d => `<path d="${d}" fill="#000"/>`).join("")}</mask>
+<clipPath id="inner"><circle cx="200" cy="200" r="149"/></clipPath>
+<path id="rp" d="M21 200a179 179 0 1 1 358 0a179 179 0 1 1-358 0"/>
+<radialGradient id="lg" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#E4D3AE"/><stop offset="1" stop-color="#CDB78D"/></radialGradient>
+</defs>
+<circle cx="200" cy="200" r="198" fill="#D9A23A" stroke="#2E261F" stroke-width="1.5"/>
+<circle cx="200" cy="200" r="191" fill="#F1E4C8" stroke="#2E261F" stroke-width="1.2"/>
+<text font-family="Amiri, serif" font-size="13" font-weight="700" fill="#2E261F" ><textPath href="#rp" startOffset="0">${ring.repeat(5)}</textPath></text>
+<circle cx="200" cy="200" r="170" fill="#42697A" stroke="#2E261F" stroke-width="1.5"/>
+<circle cx="200" cy="200" r="170" fill="url(#wv)"/>
+<circle cx="200" cy="200" r="166" fill="none" stroke="#D9A23A" stroke-width="1" stroke-dasharray="2 5"/>
+<g mask="url(#land)">
+<circle cx="200" cy="200" r="158" fill="none" stroke="#5E8796" stroke-width="10" opacity=".6"/>
+<circle cx="200" cy="200" r="150" fill="url(#lg)" stroke="#2E261F" stroke-width="2.5"/>
+</g>
+<g clip-path="url(#inner)" fill="none" stroke="#2E261F" stroke-width="2">${seas.map(d => `<path d="${d}"/>`).join("")}</g>
+<g fill="none" stroke="#42697A" stroke-width="2.4" stroke-linecap="round">
+<path d="M302 118C292 150 302 170 288 190C280 202 282 216 274 229"/>
+<path d="M210 262C198 240 192 220 184 202C180 192 176 186 171 179"/>
+<path d="M196 266C188 246 180 224 172 206C170 198 168 190 166 182"/>
+<path d="M92 230C100 214 96 204 104 196C110 190 112 184 120 172"/>
+</g>
+${ridge(298, 112, 3, "#9F2C35")}${ridge(308, 198, 4, "#B5651D")}${ridge(118, 214, 3, "#6B4E8A")}
+${ridge(172, 296, 3, "#2E9A64")}${ridge(76, 150, 4, "#B5651D")}${ridge(236, 306, 3, "#6B4E8A")}${ridge(120, 140, 2, "#9F2C35")}
+<g fill="none" stroke="#D9A23A" stroke-width="3" stroke-linecap="round">
+<path class="route" d="M245 168C228 192 214 210 205 226C230 212 262 206 290 214C318 222 336 232 344 244C346 254 338 262 326 268"/>
+<path class="route" d="M245 168C222 178 200 186 177 196C150 206 124 198 98 186"/>
+</g>
+${cities.map(c => `<circle cx="${c.x}" cy="${c.y}" r="5" fill="#F1E4C8" stroke="#2E261F" stroke-width="2"/>`).join("")}
+<g font-family="Amiri, serif" font-size="13" font-weight="700" fill="#2E261F" text-anchor="middle" style="paint-order:stroke;stroke:#E4D3AE;stroke-width:4px">
+${cities.map(c => `<text x="${c.x + c.dx}" y="${c.y + c.dy}">${c.n}</text>`).join("")}
+</g>`;
+
+/* ---------- music: an original tune in maqam Hijaz, oud-like plucks over a drone and a frame drum ---------- */
+const btn = document.getElementById("music"), lab = document.getElementById("musicLabel");
+let ac = null, master, dry, timer = null, nextT = 0, step = 0, idx = 4, playing = false;
+const cache = new Map();
+const SCALE = [0, 1, 4, 5, 7, 8, 10, 12, 13, 16, 17, 19];
+const freq = i => 146.83 * Math.pow(2, SCALE[i] / 12);
+const E = 0.34;
+function pluckBuf(f, len) {
+  const key = f.toFixed(2);
+  if (cache.has(key)) return cache.get(key);
+  const sr = ac.sampleRate, n = Math.floor(sr * len), N = Math.max(2, Math.round(sr / f));
+  const b = ac.createBuffer(1, n, sr), d = b.getChannelData(0);
+  let prev = 0;
+  for (let i = 0; i < N; i++) { const r = Math.random() * 2 - 1; prev = prev * .5 + r * .5; d[i] = prev; }
+  for (let i = N; i < n; i++) d[i] = .497 * (d[i - N] + d[i - N - 1 < 0 ? 0 : i - N - 1]);
+  cache.set(key, b);
+  return b;
+}
+function pluck(f, t, v) {
+  const s = ac.createBufferSource(); s.buffer = pluckBuf(f, 2.2);
+  const g = ac.createGain(); g.gain.value = v;
+  const lp = ac.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2600;
+  s.connect(lp); lp.connect(g); g.connect(dry); s.start(t);
+}
+function dum(t) {
+  const o = ac.createOscillator(), g = ac.createGain();
+  o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(48, t + .2);
+  g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.42, t + .008); g.gain.exponentialRampToValueAtTime(.0001, t + .45);
+  o.connect(g); g.connect(dry); o.start(t); o.stop(t + .5);
+}
+let noiseB = null;
+function tek(t, v) {
+  if (!noiseB) { noiseB = ac.createBuffer(1, ac.sampleRate * .1, ac.sampleRate); const d = noiseB.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; }
+  const s = ac.createBufferSource(); s.buffer = noiseB;
+  const bp = ac.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 2400; bp.Q.value = 1.2;
+  const g = ac.createGain(); g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + .07);
+  s.connect(bp); bp.connect(g); g.connect(dry); s.start(t); s.stop(t + .1);
+}
+function setup() {
+  ac = new (window.AudioContext || window.webkitAudioContext)();
+  master = ac.createGain(); master.gain.value = .0001;
+  const comp = ac.createDynamicsCompressor(); master.connect(comp); comp.connect(ac.destination);
+  const len = ac.sampleRate * 2.6, ir = ac.createBuffer(2, len, ac.sampleRate);
+  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3); }
+  const rev = ac.createConvolver(); rev.buffer = ir;
+  const rg = ac.createGain(); rg.gain.value = .32; rev.connect(rg); rg.connect(master);
+  dry = ac.createGain(); dry.gain.value = .9; dry.connect(master); dry.connect(rev);
+  const dl = ac.createBiquadFilter(); dl.type = "lowpass"; dl.frequency.value = 520;
+  const dg = ac.createGain(); dg.gain.value = .05; dl.connect(dg); dg.connect(master);
+  [[73.42, "triangle"], [110, "sine"], [146.83, "sine"]].forEach(([f, ty]) => { const o = ac.createOscillator(); o.type = ty; o.frequency.value = f; o.connect(dl); o.start(); });
+  const lfo = ac.createOscillator(), lg = ac.createGain(); lfo.frequency.value = .07; lg.gain.value = .02; lfo.connect(lg); lg.connect(dg.gain); lfo.start();
+}
+const RHY = [2, 1, 0, 1, 2, 0, 1, 0];
+function schedule(s, t) {
+  const b = s % 8, bar = Math.floor(s / 8) % 4;
+  if (RHY[b] === 2) dum(t); else if (RHY[b] === 1) tek(t, .11);
+  if (b === 0) pluck(73.42, t, .5);
+  const end = bar === 3 && b >= 4;
+  const p = b % 2 === 0 ? .72 : .38;
+  if (Math.random() < (end ? (b === 4 ? 1 : 0) : p)) {
+    if (end) idx = Math.random() < .6 ? 0 : 4;
+    else { idx += [-2, -1, -1, 1, 1, 2][Math.floor(Math.random() * 6)]; if (idx < 0) idx = 1; if (idx > SCALE.length - 1) idx = SCALE.length - 2; }
+    if (!end && Math.random() < .2 && idx > 0) pluck(freq(idx - 1), t - .06, .28);
+    pluck(freq(idx), t, end ? .62 : .5);
+    if (!end && Math.random() < .15) { pluck(freq(idx), t + E / 3, .3); pluck(freq(idx), t + 2 * E / 3, .26); }
+  }
+}
+function tick() { while (nextT < ac.currentTime + .3) { schedule(step, nextT); nextT += E; step++; } }
+async function play() {
+  try {
+    if (!ac) setup();
+    await ac.resume();
+    nextT = ac.currentTime + .1; step = 0;
+    master.gain.cancelScheduledValues(ac.currentTime);
+    master.gain.setValueAtTime(Math.max(master.gain.value, .0001), ac.currentTime);
+    master.gain.exponentialRampToValueAtTime(.75, ac.currentTime + 1.5);
+    timer = setInterval(tick, 60); tick();
+    playing = true; btn.setAttribute("aria-pressed", "true"); lab.textContent = "Pause music";
+  } catch (err) { lab.textContent = "Music unavailable"; }
+}
+function pause() {
+  if (!ac) return;
+  clearInterval(timer); timer = null;
+  master.gain.cancelScheduledValues(ac.currentTime);
+  master.gain.setValueAtTime(Math.max(master.gain.value, .0001), ac.currentTime);
+  master.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + .4);
+  setTimeout(() => { if (!playing && ac) ac.suspend(); }, 500);
+  playing = false; btn.setAttribute("aria-pressed", "false"); lab.textContent = "Play music";
+}
+btn.addEventListener("click", () => { playing ? pause() : play(); });
+document.addEventListener("visibilitychange", () => { if (document.hidden && playing) pause(); });
+}
+</script>
+</body>
+</html>
